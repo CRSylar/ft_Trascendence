@@ -1,0 +1,68 @@
+.left-paddle-nav {
+	background-color: rgb(255, 255, 255);
+	height: 18px;
+	width: 3px;
+	margin-right: 0.15em;
+	margin-left: 2px;
+	/* transition: 1s; */
+	animation: my-anim 2s linear forwards;
+	animation-iteration-count: infinite;
+}
+
+.right-paddle-nav {
+	background-color: rgb(255, 255, 255);
+	height: 18px;
+	width: 3px;
+	margin-left: 0.15em;
+	margin-right: 2px;
+
+	/* transition: 1s; */
+	animation: my-anim2 2s linear forwards;
+	animation-iteration-count: infinite;
+}
+
+.ball-nav {
+	height: 4px;
+	width: 4px;
+	border-radius: 50%;
+	background-color: white;
+	animation: my-anim3 0.4s linear forwards;
+	animation-iteration-count: infinite;
+}
+
+@keyframes my-anim {
+	0% {
+		transform: translateY(-10%);
+	}
+	50% {
+		transform: translateY(10%);
+	}
+	100% {
+		transform: translateY(-10%);
+	}
+}
+
+
+@keyframes my-anim2 {
+	0% {
+		transform: translateY(10%);
+	}
+	50% {
+		transform: translateY(-10%);
+	}
+	100% {
+		transform: translateY(10%);
+	}
+}
+
+@keyframes my-anim3 {
+	0% {
+		transform: translateX(40%);
+	}
+	50% {
+		transform: translateX(-40%);
+	}
+	100% {
+		transform: translateX(40%);
+	}
+}

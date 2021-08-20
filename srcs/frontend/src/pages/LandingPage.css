@@ -1,0 +1,76 @@
+.left-paddle {
+	background-color: rgb(255, 255, 255);
+	height: 0.764em;
+	width: 0.166em;
+	margin-right: 0.09em;
+	margin-left: 0.055em;
+	/* transition: 1s; */
+	animation: my-anim 2s linear forwards;
+	animation-iteration-count: infinite;
+}
+
+.right-paddle {
+	background-color: rgb(255, 255, 255);
+	height: 0.764em;
+	width: 0.166em;
+	margin-left: 0.09em;
+	margin-right: 0.055em;
+
+	/* transition: 1s; */
+	animation: my-anim2 2s linear forwards;
+	animation-iteration-count: infinite;
+}
+
+.ball {
+	height: 0.18em;
+	width: 0.18em;
+	border-radius: 50%;
+	background-color: white;
+	animation: my-anim3 0.4s linear forwards;
+	animation-iteration-count: infinite;
+}
+
+.backgroundLand{
+	position: absolute;
+	top : 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+}
+
+@keyframes my-anim {
+	0% {
+		transform: translateY(-10%);
+	}
+	50% {
+		transform: translateY(10%);
+	}
+	100% {
+		transform: translateY(-10%);
+	}
+}
+
+
+@keyframes my-anim2 {
+	0% {
+		transform: translateY(10%);
+	}
+	50% {
+		transform: translateY(-10%);
+	}
+	100% {
+		transform: translateY(10%);
+	}
+}
+
+@keyframes my-anim3 {
+	0% {
+		transform: translateX(40%);
+	}
+	50% {
+		transform: translateX(-40%);
+	}
+	100% {
+		transform: translateX(40%);
+	}
+}

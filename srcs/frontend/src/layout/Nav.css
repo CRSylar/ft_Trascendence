@@ -1,0 +1,28 @@
+/* .Nav{
+	display:flex;
+	height: 5vh;
+	justify-content: space-evenly;
+	font-size: 2rem;
+	text-decoration: none;
+	color: White;
+	background-color: black;
+}
+.Nav a{
+	font-family: monospace;
+	text-decoration: none;
+	color: inheritzz
+}
+ */
+
+.nav-link,
+.active {
+	padding: .20em;
+}
+
+.active {
+	border-bottom: 2px solid white;
+}
+
+.active:hover {
+	color: white;
+}

@@ -1,0 +1,122 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+    id              Int             @default(autoincrement()) @id
+    email           String          @default("")
+    tel             String          @default("")
+    img             String
+    firstName       String
+    lastName        String
+    userName        String          @unique
+    idIntra         String          @unique
+    campus          String
+    win             Int             @default(0)
+    loses           Int             @default(0)
+    rank            Int             @default(1400)
+    twoFa           Boolean         @default(false)
+    otpSecret       String          @default("")
+    otpUrl          String          @default("")
+    owner           Boolean         @default(false)
+    isAdmin         Boolean         @default(false)
+    banned          Boolean         @default(false)
+    firstLogin       Boolean         @default(true)
+    badge           Achievements[]
+    chat            Chat[]
+    admin           Admin[]
+    participant     Participant[]
+    userFriends     Friends[]       @relation(name: "users")
+    friendUsers     Friends[]       @relation(name: "friends")
+    blocked         Blacklist[]     @relation(name: "block")
+    blockedBy       Blacklist[]     @relation(name: "blocked")
+    moderators      Moderator[]
+}
+
+model   Friends {
+    userId      String
+    friendId    String
+    Users       User     @relation(name: "users", fields: [userId], references: [idIntra])
+    Friends     User     @relation(name: "friends", fields: [friendId], references: [idIntra])
+
+    @@id([userId, friendId])
+}
+
+model Blacklist {
+    blockId     String
+    blockedId   String
+    block       User     @relation("block", fields: [blockId], references: [idIntra])
+    blocked     User     @relation("blocked", fields: [blockedId], references: [idIntra])
+
+    @@id([blockId, blockedId])
+}
+
+model   Games {
+    id              Int         @default(autoincrement()) @id
+    idP1            String
+    idP2            String
+    idGame          String      @unique
+    status          Boolean     @default(true)
+    scoreP1         Int         @default(-1)
+    scoreP2         Int         @default(-1)
+}
+
+model   Achievements {
+    id      Int     @default(autoincrement()) @id
+    user    User    @relation(fields: [idIntra], references: [idIntra])
+    idIntra String
+    wone    Boolean @default(false)
+    wten    Boolean @default(false)
+    whun    Boolean @default(false)
+}
+
+model   Moderator {
+    user        User        @relation(fields: [idIntra], references: [idIntra])
+    idIntra     String
+    chat        Chat        @relation(fields: [idChat], references: [id])
+    idChat      Int
+
+    @@id([idIntra, idChat])
+}
+
+model   Chat {
+    id              Int         @default(autoincrement()) @unique
+    name            String
+    user            User        @relation(fields: [idIntra], references: [idIntra])
+    idIntra         String
+    types           String      @default("public")
+    pwd             String?
+    admin           Admin[]
+    moderators      Moderator[]
+    participant     Participant[]
+    banned          String[]
+
+    @@id([name, idIntra])
+}
+
+model   Admin {
+    user        User        @relation(fields: [idIntra], references: [idIntra])
+    idIntra     String
+    chat        Chat        @relation(fields: [idChat], references: [id])
+    idChat      Int
+
+    @@id([idIntra, idChat])
+}
+
+model   Participant {
+    user            User        @relation(fields: [idIntra], references: [idIntra])
+    idIntra         String
+    chat            Chat        @relation(fields: [idChat], references: [id])
+    idChat          Int
+    muted           Boolean     @default(false)
+
+    @@id([idIntra, idChat])
+}

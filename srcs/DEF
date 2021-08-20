@@ -1,0 +1,131 @@
+RISOLVERE:
+    CONNESSIONE AL WEBSOCKET
+    LOADING LEAK
+    PANNELLO ADMIN (MOD CHAT)
+    COLORE ROSSO REMOVE ADMIN / ADD ADMIN
+    DA VERIFICARE BUTTON ADMIN-CHAT
+
+
+OK = ✅
+KO = ❌
+NOT TESTED = ❓
+
+-------------------------------------------------------------------
+
+GENERAL INSTRUCTIONS: ❓
+
+VERIFICATION:
+❓  Tutti i file di configurazione sono nella cartella src
+✅  Il file di Docker è nella root del progetto
+✅  Usa il comando "docker-compose up -build" per lanciare il progetto
+❓  Metti 0 se 500 error, crash, o quando qualcosa non funziona come dovrebbe
+
+BACKEND:
+✅  Il backend deve essere in NestJS
+✅  Il database deve essere in PostgreSQL
+❓  No warning o error
+
+FRONTEND:
+✅  Scritto con un framework in Typescript
+✅  Si possono usare tutte le librerie JS/TS
+❓  No warning o error
+
+BASIC CHECK:
+✅  Ci deve essere un sito sull'URL indicato
+✅  Ci si puó loggare con l'autenticazione della 42
+✅  La prima volta che ci si logga deve apparire la schermata delle info
+✅  Se non loggato puó vedere solo la pagina di login
+✅  Il sito deve essere una "Single Page Application",
+    -   i tasti avanti e indietro devono funzionare
+✅  Compatibile con Chrome, Safari e Firefox
+
+-------------------------------------------------------------------
+
+THE WEBSITE: ❓
+
+SECURITY CONCERNS:
+✅  Controlla che il sito sia sicuro, Controlla che nel DB le apssword siano criptate,
+    -   controlla che i dati inseriti dall'utente siano validati dal server
+
+USER ADMIN INTERFACE:
+✅  Quando loggato, l'utente può accedere ad una sezione per modificare le sue info,
+    -   username (unico), avatar (generato automaticamente)
+
+USER INTERFACE:
+❓  Si possono osservare i profili degli altri utenti, contenente le info base,
+    -   username, avatar, bottone "aggiungi amico", bottone "blocca utente"
+    -   cosí da non ricevere piú messaggi da quel'utente
+
+FRIEND INTERFACE:
+✅  L'utente può accedere ad un interfaccia dove puó osservare i suoi amici,
+    -   il loro status (online, offline, in game), username e avatar
+
+2FA:
+✅ L'utente può attivare/disattivare l'autenticazione a 2 fattori, deve usare
+    -   google authenticator, SMS, email
+
+-------------------------------------------------------------------
+
+CHAT INTERFACE: ✅
+
+JOINING/LEAVING CHANNELS:
+✅  L'utente loggato può accedere alle CHAT, entrare ed uscire dalle chat deve essere
+    -   fatto manualmente, e non fatto in automatico al logout, può accedere a chat già create
+    -   e se serve la password deve inserirla
+
+CHAT USAGE:
+✅  L'Utente può chattare, deve mandare/ricevere messaggi istantaneamente,
+    -   se blocca un utente non deve vedere i suoi messaggi, l'utente può accedere
+    -   ai profili degli altri player nella chat per sfidarli a duello su Pong
+
+CREATING CHANNELS:
+✅  L'Utente puó creare nuovi canali, diventando il proprietario e potendo
+    -   (bannare, mutare, aggiungere password, aggiungere moderatori)
+
+ADMINISTRATION:
+❓  il proprietario può bannare, mutare, cacciare Tutti
+✅  gli amministratori possono bannnare, mutare, cacciare tutti tranne il proprietario
+
+-------------------------------------------------------------------
+
+WEBSITE ADMINISTRATION: ❓
+
+WEBSITE OWNER/MODERATORS:
+❓  Ci deve essere un proprietario del sito, che può aggiungere i moderatori
+    -   che avranno gli stessi poteri del propritario, senza però poterlo cacciare,
+    -   attraverso la pagina admin possono:
+        1   Eliminare canali della chat
+        2   Bannare utenti dal sito
+        3   osservare tutti i canali chat senza entrare
+        4   dare o rimuovere poteri di una chat ad un utente
+
+-------------------------------------------------------------------
+
+THE GAME ITSELF: ❓
+
+MATCHMAKING:
+✅  Quando loggato, l'utente può accedere alla pagina del matchmaking per giocare
+    -   contro altri player, le regole del gioco devono essere disponibili
+    -   nel sito, quando incrociato con un altro player deve cominciare il gioco
+
+GAMEPLAY:
+✅  deve essere giocabile rispettando le regole del sito, visibili su di una pagina
+    -   i controlli devvono essere intuitivi, quando é finita la partita ci deve essere un
+    -   end screen game o semplicemente uscire
+
+SPECTATOR MODE:
+❓  si possono vedere le partite, tutte, attraverso la chat e la friend interface
+    -   ci deve essere una pagina deidicata per vedere i live game dove poter accedere
+
+LAG & DISCONNECT:
+✅  deve essere gestito il lag e il disconnect, non deve crashare, puoi gestirli
+    -   come meglio credi:
+        1   vai in pausa
+        2   se disconnesso puo riconnettersi
+        3   etc
+
+ADDITIONAL FEATURES:
+✅  Puoi aggiungere power-ups, boost, dual-player, insomma quello che vuoi
+
+LADDER:
+✅  Ci deve essere un macthmaking per partecipare alle partite

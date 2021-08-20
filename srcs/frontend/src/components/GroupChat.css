@@ -1,0 +1,52 @@
+.selectedGroupChatButton {
+	background: #666666;
+	border-radius: 10px 10px 0 0;
+	width: 50%;
+	color: rgb(0,255,255);
+	padding: 6px;
+	margin: 0 1px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+
+
+.unselectedGroupChatButton {
+	background: rgb(30,30,30);
+	border-radius: 10px 10px 0 0;
+	border: 2px solid rgba(60, 60, 60, 1);
+	border-bottom: none;
+	width: 50%;
+	color: #606060;
+	padding: 3px;
+	margin: 0 1px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+
+
+.selectedGroupChatButton:hover,
+.unselectedGroupChatButton:hover {
+	cursor: pointer;
+	background-color: rgba(60, 60, 60, 1);
+	color: rgb(0,255,255);
+
+}
+
+.extendWidth {
+	width: 45%;
+}
+
+.rowToColumn {
+	flex-direction: row;
+}
+
+@media screen and (max-width: 850px){
+	.rowToColumn {
+		flex-direction: column;
+	}
+	.extendWidth {
+		width: 100%;
+	}
+}

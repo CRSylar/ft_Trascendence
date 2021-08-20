@@ -1,0 +1,99 @@
+
+version: "3.9"
+
+services:
+  frontend:
+    image: "node:16-slim"
+    user: "node"
+    working_dir: /home/node/app
+    volumes:
+        - ./srcs/frontend:/home/node/app
+    expose:
+        - "5000"
+    command: sh -c "npm install; npm run build; npm install serve; npx serve -s build"
+    container_name: frontend
+    depends_on:
+      - "backend"
+
+  backend:
+    image: "node:16-slim"
+    working_dir: /home/node/app
+    restart: unless-stopped
+    volumes:
+      - ./srcs/backend:/home/node/app
+    expose:
+      - "4040"
+      - "4041"
+      - "4042"
+    ports:
+      - "4041:4041"
+      - "4042:4042"
+    command: bash /home/node/app/setup.sh
+    container_name: backend
+    depends_on:
+      - "database"
+      - "rediStatus"
+      - "redisMessage"
+      - "redisNotify"
+
+  database:
+    image: "postgres:12-buster"
+    expose:
+      - "5432"
+    env_file:
+      - ./srcs/database.env
+    container_name: database
+
+  rediStatus:
+    image: "redis:buster"
+    expose:
+      - "6379"
+    env_file:
+      - ./srcs/database.env
+    container_name: rediStatus
+
+  redisMessage:
+    image: "redis:buster"
+    expose:
+      - "6378"
+    volumes:
+      - ./srcs/redis:/tmp
+    command: bash /tmp/setup.sh
+    env_file:
+      - ./srcs/message.env
+    container_name: redisMessage
+
+  redisNotify:
+    image: "redis:buster"
+    expose:
+    - "6377"
+    volumes:
+    - ./srcs/redis-notify:/tmp
+    command: bash /tmp/setup.sh
+    env_file:
+    - ./srcs/notify.env
+    container_name: redisNotify
+
+  proxy:
+    build: ./srcs/proxy
+    container_name: proxy
+    ports:
+      - "80:80"
+      - "4050:4050"
+      - "4051:4051"
+    expose:
+      - "80"
+      - "4050"
+      - "4051"
+    depends_on:
+      - "frontend"
+      - "backend"
+
+volumes:
+  frontend:
+  backend:
+  database:
+  proxy:
+  rediStatus:
+  redisMessage:
+  redisNotify:

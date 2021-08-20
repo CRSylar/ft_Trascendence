@@ -1,0 +1,33 @@
+body{
+	background-color: whitesmoke;
+  }
+  .main{
+	max-height: 100vh;
+	width:100vw;
+	background-color: whitesmoke;
+    overflow-y: hidden;
+  }
+
+  .title{
+  text-align: center;
+  width: 100%;
+  padding:2%;
+  background-color: whitesmoke;
+  color: #efefef
+  }
+
+  .bottom{
+	position: fixed;
+	width: 100%;
+	left:0;
+	bottom:0;
+  }
+
+  .message{
+	padding:0 6vw;
+  margin-bottom: 3vh;
+  max-height: 80vh;
+  overflow-y: scroll;
+  }
+  
+  

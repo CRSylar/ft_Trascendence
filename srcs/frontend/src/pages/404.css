@@ -1,0 +1,17 @@
+.maincontainer{
+    background: black;
+    opacity: 0.8;
+    animation: blinker 1.5s linear infinite;
+    color: white;
+    border-radius: 10px;
+    width: 40%;
+    padding: 2%;
+    margin: auto;
+    margin-top: 10%;
+}
+
+@keyframes blinker {
+    1% {
+      opacity: 0.5;
+    }
+  }

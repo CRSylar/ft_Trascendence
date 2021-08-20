@@ -1,0 +1,9 @@
+.openChatIcon {
+	margin-left: auto;
+	color: white;
+}
+
+.openChatIcon:hover {
+	color: rgb(0,255,255);
+	cursor: pointer;
+}

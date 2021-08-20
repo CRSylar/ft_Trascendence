@@ -1,0 +1,40 @@
+.text{
+	color: white;
+	font-family: Montserrat;
+}
+
+.userflex{
+	flex-direction: row;
+}
+
+.username {
+	width: 60%;
+}
+
+.start {
+	align-items: flex-start;
+	width: 35%;
+}
+
+.end {
+	align-items: flex-end;
+	width: 35%;
+}
+
+@media screen and (max-width: 800px){
+  .userflex {
+    flex-direction: column;
+  }
+
+	.start,
+	.end {
+		/* border: 1px solid red; */
+		margin: 0.5rem 0;
+		align-items: center;
+		width: 100%;
+	}
+
+	.username {
+		width: 100%;
+	}
+}

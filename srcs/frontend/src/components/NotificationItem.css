@@ -1,0 +1,29 @@
+.closeNotif {
+	background: none;
+	color: white;
+	/* padding: 0.5rem; */
+}
+
+.closeNotif:hover {
+	/* color: rgb(255,0,255); */
+	cursor: pointer;
+	background-color: #666666;
+}
+
+.notifItem {
+	width: 95%;
+	padding: 1rem 0.3rem;
+}
+
+.notifItem:not(:last-child) {
+	border-bottom: 1px solid #666666;
+}
+
+.noUnderline {
+	font-size: 1rem;
+}
+
+.noUnderline:hover {
+	text-decoration: none !important;
+	/* color: red; */
+}
