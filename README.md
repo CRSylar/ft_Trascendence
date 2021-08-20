@@ -49,11 +49,11 @@ this will set up and build ALL the project
 
 
 Credits :
-  - me (backend and a small part of frontend)
-  - [Umberto Savoid](https://github.com/UmbertoSavoia) (backend and a small part of frontend)
-  - me (backend and a small part of frontend)
-  -  (databse and backend)
-  -  (All the game part)
-  -  (frontend and Graphics)
-  -  (frontend and Graphics)
-  -  (frontend)
+  - [Me](https://github.com/CRSylar) (Database, Backend, small part of Frontend)
+  - [Umberto Savoia](https://github.com/UmbertoSavoia) (Database, Backend, small part of Frontend)
+  - [Mattia Cossu](https://github.com/MattiaCossu89) (Database, Backend, small part of Frontend)
+  - [Andrea Duregon](https://github.com/AndreaDuregon) Database, Backend, small part of Frontend)
+  - [Damiano Malori](https://github.com/demian2435) (Game part as FullStack)
+  - [Simone Giovo](https://github.com/sgiovo) (Frontend, Design, UI, UX)
+  - [Andrea De Felice](https://github.com/ekmbcd) (Frontend, Design, UI, UX)
+  - [Federico Orsili]() (Frontend, Design, UI, UX)
