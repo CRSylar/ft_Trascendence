@@ -50,7 +50,7 @@ this will set up and build ALL the project
 
 Credits :
   - me (backend and a small part of frontend)
-  - https://github.com/UmbertoSavoia (backend and a small part of frontend)
+  - [Umberto Savoid](https://github.com/UmbertoSavoia) (backend and a small part of frontend)
   - me (backend and a small part of frontend)
   -  (databse and backend)
   -  (All the game part)
