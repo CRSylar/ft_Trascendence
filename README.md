@@ -1,4 +1,7 @@
 # ft_Trascendence
+
+![Cromalde's 42Project Score](https://badge42.herokuapp.com/api/project/cromalde/ft_trascendence)
+
 The final Project of the 42_Common_Core
 
 In this final project we have to setup an entire website ( in typescript ) to reproduce a PONG contest, there will be a ladder sistem, a matchmaking sistem,
