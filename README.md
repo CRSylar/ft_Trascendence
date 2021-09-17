@@ -1,6 +1,6 @@
 # ft_Trascendence
 
-![Cromalde's 42Project Score](https://badge42.herokuapp.com/api/project/cromalde/ft_trascendence)
+![Cromalde's 42Project Score](https://badge42.herokuapp.com/api/project/cromalde/ft_transcendence)
 
 The final Project of the 42_Common_Core
 
