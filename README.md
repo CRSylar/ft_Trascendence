@@ -4,6 +4,10 @@
 
 The final Project of the 42_Common_Core
 
+
+![ft_trascendence](https://user-images.githubusercontent.com/74542458/134182326-1aeaeafd-b357-4cc1-b052-8c951d283a6d.gif)
+
+
 In this final project we have to setup an entire website ( in typescript ) to reproduce a PONG contest, there will be a ladder sistem, a matchmaking sistem,
 a  (not so) small "social" behaviour in witch an user can :
   - Add other user as a friend (it's more like a Follow)
